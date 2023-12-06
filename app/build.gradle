@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.tag.tag"
+        minSdk 21
+        targetSdk 33
+        versionCode 24
+        versionName "1.1.007"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'com.tag.tag'
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.1.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.loopj.android:android-async-http:1.4.11'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation "androidx.camera:camera-camera2:1.0.0-rc01"
+    implementation "androidx.camera:camera-lifecycle:1.0.0-rc01"
+    implementation 'androidx.camera:camera-view:1.0.0-alpha20'
+}

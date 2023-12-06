@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Tag Suggester</string>
+    <string name="app_description">Discover the perfect image tags effortlessly with the help of Tag Suggestion</string>
+    <string name="choose_file">Choose File</string>
+    <string name="take_picture">Take a picture</string>
+    <string name="ai_tag_suggestion">AI tag Suggestion</string>
+    <string name="back">Back</string>
+    <string name="front">Front</string>
+
+    <string name="server_problem">Something bad happened, Please try again!</string>
+</resources>

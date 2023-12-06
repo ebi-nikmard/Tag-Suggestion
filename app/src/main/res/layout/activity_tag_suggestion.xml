@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".project.tag.view.TagSuggestionActivity">
+
+    <TextView
+        android:id="@+id/activity_tag_suggestion_tv_app_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:text="@string/app_description"
+        android:textColor="@color/colorGray7"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/activity_tag_suggestion_ll_choose_camera_gallery"
+        android:textSize="23sp" />
+
+    <LinearLayout
+        android:id="@+id/activity_tag_suggestion_ll_choose_camera_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+
+        <RelativeLayout
+            android:id="@+id/activity_tag_suggestion_rl_choose_from_gallery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:background="@drawable/national_card_upload_file_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:contentDescription="@string/app_name"
+                    android:tint="@color/colorBlueLightV8"
+                    android:src="@drawable/ic_camera"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/choose_file"
+                    android:textColor="@color/colorGray7"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_tag_suggestion_rl_take_a_picture"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/national_card_upload_file_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="2dp"
+                    android:contentDescription="@string/app_name"
+                    android:tint="@color/colorBlueLightV8"
+                    android:src="@drawable/ic_camera"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/take_picture"
+                    android:textColor="@color/colorGray7"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/activity_tag_suggestion_iv_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name"/>
+
+    <LinearLayout
+        android:id="@+id/activity_tag_suggestion_ll_complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/activity_tag_suggestion_mb_ai"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:textSize="14sp"
+            android:textColor="@color/colorBlueLightV8"
+            android:maxLines="1"
+            android:text="@string/ai_tag_suggestion"
+            app:backgroundTint="@color/colorBlueLightV3"
+            fontPath="fonts/Shabnam-Medium.ttf"
+            android:gravity="center"
+            android:layout_gravity="end"
+            app:cornerRadius="20dp"
+            android:ellipsize="end"
+            android:clickable="false"
+            android:focusable="false"
+            android:paddingBottom="10dp"
+            android:visibility="visible"
+            android:textAllCaps="false"/>
+
+        <ProgressBar
+            android:id="@+id/activity_tag_suggestion_pb_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/activity_tag_suggestion_cg_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:background="#33000000"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/activity_tag_suggestion_fab_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_reload"
+        app:tint="@color/colorBlueLightV8"
+        app:backgroundTint="@color/colorBlueLightV3"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        app:borderWidth="3dp"
+        app:elevation="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:fabSize="mini"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>
